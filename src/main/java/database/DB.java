@@ -9,7 +9,7 @@ public class DB {
 
     //  Database credentials
     private final String USER = "root";
-    private final String PASS = "q1w2e3r4";
+    private final String PASS = "";
 
     public Connection conn;
 
