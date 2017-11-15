@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+//teste
+
 public class PetDAO {
 
     PreparedStatement preparedStatement;
@@ -21,12 +23,13 @@ public class PetDAO {
         Integer owner_id = petRS.getInt("fk_owner");
 
 
-        //devolver uma instancia Pet
+        //devolver uma instância Pet
         return Pet.builder().id(id).name(petName).gender(petGender).owner_id(owner_id).build();
+
     }
 
     public void insertPetIntoDatabase(PetCreateRequest request, int ownerId) throws SQLException {
-        //criar pet
+        //criar um pet
 
         String insertPet = "insert into pet(name, gender, fk_owner) values (?, ?, ?)";
 
@@ -52,11 +55,11 @@ public class PetDAO {
 
         List<String> adresses = new ArrayList<>();
 
-       String sql =  "insert into pet (name, gender, fk_owner) values (?, ?, ?)";
+        String sql = "insert into pet (name, gender, fk_owner) values (?, ?, ?)";
         preparedStatement = DB.getDB().getConn().prepareStatement(sql);
         preparedStatement.setString(1, request.getPetName());
         preparedStatement.setInt(2, request.getPetGender());
-        preparedStatement.setInt(3,new OwnerDao().getOwnerId(request));
+        preparedStatement.setInt(3, new OwnerDao().getOwnerId(request));
         preparedStatement.executeUpdate();
         DB.getDB().getConn().commit();
 
@@ -67,7 +70,7 @@ public class PetDAO {
         preparedStatement.setInt(1, new OwnerDao().getOwnerId(request));
         ResultSet resultSet = preparedStatement.executeQuery();
         DB.getDB().getConn().commit();
-        while (resultSet.next()){
+        while (resultSet.next()) {
             String nameAdress = resultSet.getString("adressName");
             adresses.add(nameAdress);
         }
@@ -80,11 +83,12 @@ public class PetDAO {
         String sql = "select p.name as petName, p.gender, ow.name as ownerName, ow.phone from pet as p inner join owner ow" +
                 " on p.fk_owner = ow.id where p.name = ? and ow.name = ?";
         PreparedStatement preparedStatement = DB.getDB().queryPrepared(sql);
-        preparedStatement.setString(1,request.getPetName());
-        preparedStatement.setString(2,request.getOwnerName());
+        preparedStatement.setString(1, request.getPetName());
+        preparedStatement.setString(2, request.getOwnerName());
         ResultSet resultSet = preparedStatement.executeQuery();
         DB.getDB().getConn().commit();
-        while (resultSet.next()){
+
+        while (resultSet.next()) {
             String petName = resultSet.getString("petName");
             Integer gender = resultSet.getInt("gender");
             String ownerName = resultSet.getString("ownerName");
