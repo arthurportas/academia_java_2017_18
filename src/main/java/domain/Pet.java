@@ -7,6 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @ToString
+
 public class Pet {
 
     private Integer id;
@@ -14,5 +15,6 @@ public class Pet {
     private int gender;
 
     //teste branch f
+    // teste segundo
 
 }
