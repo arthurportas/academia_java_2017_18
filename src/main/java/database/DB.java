@@ -43,7 +43,7 @@ public class DB {
         return statement;
     }
 
-    //CRUD
+    //CRUD  
     public int create(String query) throws SQLException {
         PreparedStatement statement = instance.conn.prepareStatement(query);
         int numRowsAffected = statement.executeUpdate(query);
