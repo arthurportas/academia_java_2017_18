@@ -21,6 +21,7 @@ public class PetDAO {
         String petName = petRS.getString("name");
         Integer petGender = petRS.getInt("gender");
         Integer owner_id = petRS.getInt("fk_owner");
+        
 
 
         //devolver uma instância Pet
