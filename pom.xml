@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pt.rumos</groupId>
-    <artifactId>pet-middleware</artifactId>
+    <artifactId>pet-mdw</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
