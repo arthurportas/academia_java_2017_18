@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DB {
 
-    private String DB_URL = "jdbc:mysql://localhost/webdb";
+    private String DB_URL = "jdbc:mysql://localhost/pet";
 
     private String USER = "root";
     private String PASS = "123456";
