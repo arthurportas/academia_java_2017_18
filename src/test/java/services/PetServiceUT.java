@@ -81,7 +81,7 @@ public class PetServiceUT {
 
     @Test
     public void createPet_returnOwnerAdresses(){
-        PetCreateRequest request = buildRequest("Jose", "Boby", 0, adresses);
+        PetCreateRequest request = buildRequest("Jose", "Faísca", 0, adresses);
         PetCreateResponse response = null;
         try {
            response = petService.createPet_returnOwnerAdresses(request);
