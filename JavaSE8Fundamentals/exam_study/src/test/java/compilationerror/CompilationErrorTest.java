@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Copyright (c) 2016, 2017, Jumia.
  */
-public class CompilationError {
+public class CompilationErrorTest {
 
     /**
      * {@see https://docs.oracle.com/javase/specs/jls/se8/html/jls-4.html#jls-4.12.4}
